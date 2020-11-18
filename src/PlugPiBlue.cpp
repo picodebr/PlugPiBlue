@@ -9,6 +9,18 @@ void PlugPiBlue::setup() {
   pinMode(_potentiometerPin, INPUT);
 }
 
+uint16_t PlugPiBlue::getPotentiometerValue(void) {
+  return analogRead(_potentiometerPin);
+}
+
+uint16_t PlugPiBlue::getRawTemperatureValue(void) {
+  return analogRead(_lm35Pin);
+}
+
+float PlugPiBlue::getTemperatureValue(void) {
+  return float(analogRead(_lm35Pin) * 0.0048828125 * 100);
+}
+
 void PlugPiBlue::redLedOn() { digitalWrite(_redLedPin, true); }
 
 void PlugPiBlue::redLedOff() { digitalWrite(_redLedPin, false); }

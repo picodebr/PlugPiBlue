@@ -10,6 +10,9 @@ class PlugPiBlue {
 
   uint16_t getPotentiometerValue(void);
 
+  uint16_t getRawTemperatureValue(void);
+  float getTemperatureValue(void);
+
   void redLedOn();
   void redLedOff();
   void redLedPercent(uint8_t percent);
